@@ -10,17 +10,21 @@ xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${q}&APPID=${
 xhr.send()
 
 xhr.onload = function() {
-
 	let parsed = JSON.parse(xhr.response)
-
 	console.log(parsed)
-
 	render(parsed)
 }
 
 let render = parsed => {
-
-	let { temp, humidity } = parsed.main
-
+	let temp = parsed.main.temp
 	document.getElementById('current-temp').innerHTML = `${Math.floor(temp - K)}°C`
+	
+	let name = parsed.name
+	document.getElementById('name').innerHTML = name
+	
+	let description = parsed.weather[0].main
+	document.getElementById('description').innerHTML = description
+
+	let sunrise = parsed.sys.sunrise
+	// document.getElementById('sunrise').innerHTML = sunrise
 }
