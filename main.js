@@ -13,7 +13,7 @@ xhr.onload = function() {
 	let parsed = JSON.parse(xhr.response)
 	console.log(parsed)
 	render(parsed)
-}
+} 
 
 let render = parsed => {
 	let temp = parsed.main.temp
@@ -26,5 +26,16 @@ let render = parsed => {
 	document.getElementById('description').innerHTML = description
 
 	let sunrise = parsed.sys.sunrise
-	// document.getElementById('sunrise').innerHTML = sunrise
+	let date = new Date(sunrise * 1000)
+	let timestr  = date.getHours()
+
+	// let hours = ( (sunrise / (1000 * 60 * 60)) % 24)
+	let minutes = Math.floor( (sunrise / 1000 / 60) % 60 )
+	document.getElementById('sunrise').innerHTML = timestr + ':' + minutes
+	
+	let sunset = parsed.sys.sunset
+	let datenight = new Date(sunset * 1000)
+	let hours  = datenight.getHours()
+	let min = Math.floor( (sunset / 1000 / 60) % 60 )
+	document.getElementById('sunset').innerHTML = hours + ':' + min
 }
