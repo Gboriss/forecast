@@ -21,3 +21,4 @@ searchBox.addListener('places_changed', function() {
 	console.log(lat, lng)
 })
 
+
