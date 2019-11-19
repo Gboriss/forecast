@@ -8,14 +8,12 @@ let url = `https://api.openweathermap.org/data/2.5/weather?q=${q}&APPID=${apiKey
 let K = 273.15
 
 
+get(url)
 
-let promise = get(url)
-
-console.log(promise)
-
-promise.then(parsed => {
+.then(parsed => {
 
 		render(parsed)
+		console.log(parsed)
 		
 	})
 
