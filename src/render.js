@@ -5,8 +5,8 @@ let render = parsed => {
 	let temp = parsed.main.temp
 	document.getElementById('current-temp').innerHTML = `${Math.floor(temp - K)}°C`
 	
-	let name = parsed.name
-	document.getElementById('name').innerHTML = name
+	// let name = parsed.name
+	// document.getElementById('name').innerHTML = name
 	
 	let description = parsed.weather[0].main
 	document.getElementById('description').innerHTML = description
