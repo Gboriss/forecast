@@ -1,21 +1,26 @@
-function componentDidMount() {
-let input = document.getElementById('autocomplete');
 
-let autocomplete = new google.maps.places.Autocomplete(input, {types: ['(cities)']});
+import get from './get'
+import render from './render'
 
-  google.maps.event.addListener(autocomplete, 'place_changed', () => {
-	let place = autocomplete.getPlace();
+let apiKey = '9a3f56db816fe284dd580a82176924f9'
 
-	let lat = place.geometry.location.lat();
-	let lng = place.geometry.location.lng();
+
+let input = document.getElementById('autocomplete')
+
+let autocomplete = new google.maps.places.Autocomplete(input, {types: ['(cities)']})
+
+google.maps.event.addListener(autocomplete, 'place_changed', () => {
+	let place = autocomplete.getPlace()
+
+	let lat = place.geometry.location.lat()
+	let lng = place.geometry.location.lng()
 	console.log(place)
-	// this.setState({
-	// 	lat,
-	// 	lng
-	// });
+	console.log(lat, lng)
 
-	// this.onSubmit(lat, lng);
-});
-}
-componentDidMount()
+	get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${apiKey}`)
+		.then(parsed => {
+
+			render(parsed)
+		})
+})
 
