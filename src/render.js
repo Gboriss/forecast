@@ -1,6 +1,9 @@
 
 let K = 273.15
 
+let sunsetP = document.getElementById('sunsetP')
+let sunriseP = document.getElementById('sunriseP')
+
 let render = parsed => {
 	let temp = parsed.main.temp
 	document.getElementById('current-temp').innerHTML = `${Math.floor(temp - K)}°C`
@@ -18,6 +21,11 @@ let render = parsed => {
 	// let hours = ( (sunrise / (1000 * 60 * 60)) % 24)
 	let minutes = Math.floor( (sunrise / 1000 / 60) % 60 )
 	document.getElementById('sunrise').innerHTML = timestr + ':' + minutes
+
+	sunsetP.innerHTML = 'sunset'
+	sunriseP.innerHTML = 'sunrise'
+
+
 	
 	let sunset = parsed.sys.sunset
 	let datenight = new Date(sunset * 1000)

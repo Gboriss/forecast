@@ -2,13 +2,16 @@
 	position: relative;
 	margin: 0;
 	box-shadow: 1px 3px 10px rgba(17, 17, 17, .5);
+	width: 100%;
+	background-color: #FFF;
+	
+	border-radius: 8px;
 
 	input {
 		position: relative;
 		display: block;
-		width: 550px;
-		// width: 100%;
-		padding: 0 10px;
+		width: 92%;
+		padding: 0 30px;
 		font-size: 24px;
 		line-height: 1.5;
 
@@ -16,6 +19,8 @@
 		border: none;
 		box-sizing: border-box;
 		z-index: 1;
+
+		border-radius: 8px;
 
 		&:focus {
 			outline: none;
@@ -35,9 +40,12 @@
 		border: none;
 		background-color: transparent;
 		cursor: pointer;
-		opacity: .4;
+		// opacity: .4;
 		transition: all .2s;
 		z-index: 2;
+		background-color: #FFF;
+
+
 
 		&:focus,
 		&:hover {
