@@ -1,5 +1,5 @@
 
-export default function get(url, method = 'GET') {
+function get(url, method = 'GET') {
 	return new Promise((resolve, reject) => {
 
 		let xhr = new XMLHttpRequest()
@@ -36,4 +36,4 @@ export default function get(url, method = 'GET') {
 
 }
 
-// export default get
+export default get
