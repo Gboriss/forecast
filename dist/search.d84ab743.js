@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = get;
 
 function get(url) {
   var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
@@ -152,10 +152,7 @@ function get(url) {
       reject();
     };
   });
-}
-
-var _default = get;
-exports.default = _default;
+} // export default get
 },{}],"src/render.js":[function(require,module,exports) {
 "use strict";
 
