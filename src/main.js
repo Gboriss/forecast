@@ -10,6 +10,6 @@ form.onsubmit = e => e.preventDefault()
 
 
 
-hearts.classList.add('#widget')
+// hearts.classList.add('#widget')
 // hearts.classList.remove('#widget')
 
