@@ -5,4 +5,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"HJDO":[function(require,module,exports) {
 "use strict";require("../styles/main"),require("../styles/search");var e=document.querySelector("#widget"),t="9a3f56db816fe284dd580a82176924f9",r="Moscow,ru",a="https://api.openweathermap.org/data/2.5/weather?q=".concat(r,"&APPID=").concat(t),c=document.getElementById("search-form");c.onsubmit=function(e){return e.preventDefault()};
 },{"../styles/main":"LDUH","../styles/search":"bV2H"}]},{},["HJDO"], null)
-//# sourceMappingURL=main.6cdf440f.js.map
+//# sourceMappingURL=main.a95c6a32.js.map
